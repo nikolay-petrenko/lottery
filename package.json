@@ -4,12 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node bin/www",
+    "migrate": "node_modules/.bin/sequelize db:create && node_modules/.bin/sequelize db:migrate",
+    "migrate-prod": "cross-env NODE_ENV=production node_modules/.bin/sequelize db:create && node_modules/.bin/sequelize db:migrate"
   },
   "author": "Roman Boiko <roman.bv20@gmail.com>",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
-    "sequelize": "^5.19.1"
+    "pg": "^7.12.1",
+    "sequelize": "^5.19.2"
   }
 }
