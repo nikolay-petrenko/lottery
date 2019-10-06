@@ -1,7 +1,9 @@
 const DataTypes = require("sequelize");
-const orm = require("./../builder");
+const orm = require("../builder");
 
-module.exports = orm.define(
+const Prize = require('./Prize');
+
+const User = orm.define(
   "users",
   {
     id: {
@@ -24,15 +26,31 @@ module.exports = orm.define(
     role: {
       type: DataTypes.STRING(255),
       allowNull: true
+    },
+    createdAt: {
+      field: 'created_at',
+      type: DataTypes.DATE,
+    },
+    updatedAt: {
+      field: 'updated_at',
+      type: DataTypes.DATE,
+    },
+    prize_id: {
+      type: DataTypes.INTEGER,
+      references: { model: 'prizes', key: 'id' }
     }
   },
   {
     indexes: [
       {
         unique: true,
-        fields: ["email", "login"]
+        fields: ["email"]
       }
-    ],
-    timestamps: false
+    ]
   }
 );
+
+User.hasOne(Prize, { foreignKey: 'id' });
+Prize.belongsTo(User, { as: 'user', foreignKey: 'id' });
+
+module.exports = User;
