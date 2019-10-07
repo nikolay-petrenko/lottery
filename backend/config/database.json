@@ -1,0 +1,19 @@
+{
+  "development": {
+    "username": "abccd",
+    "password": "abccd123",
+    "database": "lottery",
+    "host": "127.0.0.1",
+    "port": 5432,
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "abccd",
+    "password": "abccd123",
+    "database": "lottery",
+    "host": "127.0.0.1",
+    "port": 5432,
+    "dialect": "postgres"
+  }
+}
+  
