@@ -1,8 +1,6 @@
 const DataTypes = require("sequelize");
 const orm = require("../builder");
 
-const Prize = require('./Prize');
-
 const User = orm.define(
   "users",
   {
@@ -11,7 +9,7 @@ const User = orm.define(
       autoIncrement: true,
       primaryKey: true
     },
-    email: {
+    name: {
       type: DataTypes.STRING(255),
       allowNull: true
     },
@@ -35,22 +33,12 @@ const User = orm.define(
       field: 'updated_at',
       type: DataTypes.DATE,
     },
-    prize_id: {
+    prizeId: {
+      field: 'prize_id',
       type: DataTypes.INTEGER,
-      references: { model: 'prizes', key: 'id' }
+      references: { model: 'prizes', key: 'prize_id' }
     }
-  },
-  {
-    indexes: [
-      {
-        unique: true,
-        fields: ["email"]
-      }
-    ]
   }
 );
-
-User.hasOne(Prize, { foreignKey: 'id' });
-Prize.belongsTo(User, { as: 'user', foreignKey: 'id' });
 
 module.exports = User;

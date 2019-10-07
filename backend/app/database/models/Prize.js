@@ -1,8 +1,6 @@
 const DataTypes = require("sequelize");
 const orm = require("../builder");
 
-const User = require('./User');
-
 const Prize = orm.define(
   "prizes",
   {

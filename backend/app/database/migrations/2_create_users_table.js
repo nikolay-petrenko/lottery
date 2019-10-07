@@ -6,7 +6,7 @@ module.exports = {
         autoIncrement: true,
         primaryKey: true
       },
-      email: {
+      name: {
         type: DataTypes.STRING
       },
       telegram: {
@@ -35,7 +35,7 @@ module.exports = {
       }
     }).
       then(() => {
-        QueryInterface.addConstraint('users', ['email', 'telegram', 'phone'], {
+        QueryInterface.addConstraint('users', ['title', 'telegram', 'phone'], {
           type: 'unique',
           name: 'user_unique_key'
         });

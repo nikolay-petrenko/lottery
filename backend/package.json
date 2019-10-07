@@ -13,7 +13,10 @@
   "author": "Roman Boiko <roman.bv20@gmail.com>",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.17.1",
+    "googleapis": "^43.0.0",
+    "moment": "^2.24.0",
     "pg": "^7.12.1",
     "sequelize": "^5.19.2",
     "sequelize-cli": "^5.5.1"
