@@ -1,6 +1,5 @@
-const ROOT_PATH = process.cwd();
 const Sequelize = require("sequelize");
-const config = require(ROOT_PATH + "/config/database");
+const config = require("../../config/database");
 let node_env = process.env.NODE_ENV || "development";
 
 module.exports = new Sequelize({
