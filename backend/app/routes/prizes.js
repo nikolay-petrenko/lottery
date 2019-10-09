@@ -23,7 +23,8 @@ router.post('/:prizeId', async (req, res, next) => {
     where: {
       id: prizeId
     }
-  })
+  });
+  res.send({status: 'Ok'})
 });
 
 module.exports = router;

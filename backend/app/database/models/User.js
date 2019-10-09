@@ -25,6 +25,10 @@ const User = orm.define(
       type: DataTypes.STRING(255),
       allowNull: true
     },
+    ip: {
+      type: DataTypes.STRING(255),
+      allowNull: true
+    },
     createdAt: {
       field: 'created_at',
       type: DataTypes.DATE,

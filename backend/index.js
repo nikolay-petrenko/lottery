@@ -13,9 +13,9 @@ const affhub = require('./app/routes/affhub');
 app.use(cors());
 app.use(bodyParser.json());
 
-app.use('/users', users);
-app.use('/prizes', prizes);
-app.use('/affhub', affhub);
+app.use('/api/users', users);
+app.use('/api/prizes', prizes);
+app.use('/api/affhub', affhub);
 
 //Server starting
 app.listen(config.applicationPort, () => {
