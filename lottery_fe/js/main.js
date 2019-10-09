@@ -155,6 +155,7 @@ var App = function () {
               success: (data) => {
                 userId = data.userId;
                 $("#user-id").text(`#${10000 + userId}`);
+                $("#final-id").text(`${10000 + userId}`);
                 if (!data.prize) {
                   App.fetchPrizes();
                 }
@@ -262,6 +263,8 @@ var App = function () {
               contentType: "application/json",
               data: JSON.stringify({ userId }),
               success: () => {
+                $("#won-prize").text(prizes.find(prize => prize.id === (number || 8)).title);
+                // $("#prize-image").attr("src", `img/svg/prizes-${number || 8}.svg`);
                 $('.main').addClass('animate');
               }
             }

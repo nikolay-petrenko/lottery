@@ -20,11 +20,11 @@ router.post('/', async (req, res, next) => {
 
   transaction.commit();
 
-  // if(!isCreated){
-  //   return res.status(403).send({
-  //     message: 'User already created'
-  //   });
-  // }
+  if(!isCreated){
+    return res.status(403).send({
+      message: 'User already created'
+    });
+  }
 
   await appendToGoogleSheet('lotteryRostovNaDony', [
     req.body.name,
@@ -34,7 +34,7 @@ router.post('/', async (req, res, next) => {
   ]);
 
   res.cookie('userId', user.id).send({
-    // prize: user.prize && user.prize.title,
+    prize: user.prize && user.prize.title,
     userId: user.id
   })
 });
