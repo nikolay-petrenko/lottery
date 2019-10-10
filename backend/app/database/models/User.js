@@ -39,8 +39,7 @@ const User = orm.define(
     },
     prizeId: {
       field: 'prize_id',
-      type: DataTypes.INTEGER,
-      references: { model: 'prizes', key: 'prize_id' }
+      type: DataTypes.INTEGER
     }
   }
 );
