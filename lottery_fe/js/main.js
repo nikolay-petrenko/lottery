@@ -79,6 +79,16 @@ var App = function () {
   var pie = wheelBlock.find(".pie");
   var pieAmin = $('.wheel__pie');
   var formBlock = $("#form");
+  var prizeImagesMap = {
+    "Рюкзак Everad": 1,
+    "Термокружки Everad": 2,
+    "USB браслет Everad": 3,
+    "Powerbank Everad": 4,
+    "Значки от Affhub": 5,
+    "Ветровка от Affhub": 6,
+    "USB зажигалка Affhub": 7,
+    "Пуловер Affhub": 8,
+  };
   var errorMessages = {
     name: {
       regExp: /([A-Za-zА-ЯЄІЇа-яєії])+$/,
@@ -264,7 +274,7 @@ var App = function () {
               data: JSON.stringify({ userId }),
               success: () => {
                 $("#won-prize").text(prizes.find(prize => prize.id === (number || 8)).title);
-                // $("#prize-image").attr("src", `img/svg/prizes-${number || 8}.svg`);
+                $("#prize-image").attr("src", `img/svg/prizes-${number || 8}.svg`);
                 $('.main').addClass('animate');
               }
             }
@@ -314,6 +324,7 @@ var App = function () {
       App.submitHandler();
       App.startGame();
       App.pieDraw();
+      $('#prize-image').css('filter', 'drop-shadow(0 0 15px rgba(255, 96, 163, 0.7))');
     }
   };
 }();
