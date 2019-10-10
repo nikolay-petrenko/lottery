@@ -922,7 +922,7 @@ textarea:-webkit-autofill:hover {
 @media screen and (max-width:1000px) {
   .btn {
     padding: 11px;
-    font-size: 20px
+    font-size: 18px
   }
 
   .main {
@@ -1030,7 +1030,7 @@ textarea:-webkit-autofill:hover {
 
   .footer__center .partner__text {
     margin-right: 0;
-    margin-bottom: 5px
+    margin-bottom: 10px
   }
 }
 
@@ -1167,9 +1167,27 @@ textarea:-webkit-autofill:hover {
   }
 }
 
+.main__last .btn {
+  max-width: 300px;
+  margin-top: 20px;
+  padding: 10px;
+}
+
+@media screen and (min-width: 1000px) {
+  .main__last .btn {
+    max-width: 410px;
+    padding: 15px;
+    font-size: 20px;
+  }
+}
+
 /* test styles */
 
-/* .main__content {
+/* body {
+  min-height: 100vh;
+}
+
+.main__content {
   display: none;
 }
 
@@ -1182,5 +1200,3 @@ textarea:-webkit-autofill:hover {
 .main__last *.link {
   display: inline !important;
 } */
-
-/*# sourceMappingURL=../maps/main.css.map */
